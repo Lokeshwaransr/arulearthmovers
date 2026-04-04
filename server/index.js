@@ -13,7 +13,9 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "*"
+    origin: "https://arulearthmovers.vercel.app", // உங்க frontend domain
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
   })
 );
 app.use(express.json());
