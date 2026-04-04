@@ -3,7 +3,7 @@ function Navbar({ activeSection, onNavigate, sectionItems }) {
     <header className="topbar">
       <div className="brand-block">
         <span className="eyebrow">Arul Earth Movers</span>
-        <h1>Mini Excavator Services in Tamil Nadu</h1>
+        <h1>Mini Excavator Services in Thanjavur</h1>
       </div>
       <nav className="nav-links" aria-label="Main Navigation">
         {sectionItems.map((item) => (
