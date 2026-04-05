@@ -50,6 +50,11 @@ cd ../server && npm install
 
 Copy `server/.env.example` to `server/.env` and update values if needed.
 
+Optional frontend environment:
+
+- Create `client/.env` with `VITE_API_BASE_URL=https://arulearthmovers.onrender.com`
+- Set `FRONTEND_URL` in `server/.env` for the deployed frontend origin when needed
+
 3. Start the project:
 
 ```bash

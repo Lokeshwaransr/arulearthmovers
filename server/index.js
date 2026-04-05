@@ -10,10 +10,23 @@ connectDB();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://arulearthmovers.vercel.app",
+  "https://arulearthmovers.onrender.com",
+  process.env.FRONTEND_URL
+].filter(Boolean);
 
 app.use(
   cors({
-    origin: "https://arulearthmovers.vercel.app", // உங்க frontend domain
+    origin(origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+        return;
+      }
+
+      callback(new Error("Not allowed by CORS"));
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   })
